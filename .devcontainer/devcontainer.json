@@ -1,46 +1,49 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Node.js & TypeScript",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-	"features": {
-		//"ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
-		"ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
-		"ghcr.io/devcontainers-extra/features/tmux-apt-get:1": {},
-		//"ghcr.io/devcontainers-extra/features/tmux-homebrew:1": {},
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"configureZshAsDefaultShell": true,
-			"installOhMyZsh": true,
-			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"username": "automatic",
-			"userUid": "automatic",
-			"userGid": "automatic"
-		}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"esbenp.prettier-vscode"
-			]
-		}
-	},
+  "name": "Node.js & TypeScript",
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "features": {
+    //"ghcr.io/devcontainers-extra/features/neovim-apt-get:1": {},
+    //"ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+    //"ghcr.io/devcontainers-extra/features/tmux-apt-get:1": {},
+    //"ghcr.io/devcontainers-extra/features/tmux-homebrew:1": {},
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "username": "automatic",
+      "userUid": "automatic",
+      "userGid": "automatic"
+    }
+  },
 
-	// Configure tool-specific properties.
-	// "customizations": {},
+  "containerEnv": {
+    "LC_ALL": "de_DE.UTF-8",
+    "LANG": "de_DE.UTF-8",
+    "LANGUAGE": "de_DE.UTF-8",
+    "TZ": "Europe/Berlin"
+  },
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-	"runArgs": ["--privileged"]
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        //Prettier Configuration
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  },
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  "runArgs": ["--privileged"]
 }
